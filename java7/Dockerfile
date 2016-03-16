@@ -18,6 +18,10 @@ RUN set -x \
   && echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections \
   && apt-get install oracle-java7-installer -y
 
+# Clean cache
+RUN \
+  rm -rf /var/cache/*  && \
+  rm -rf /var/lib/apt/lists/*
 
 # Define working directory.
 WORKDIR /data
