@@ -1,0 +1,8 @@
+{
+  "template": "tomcat",
+  "settings": {
+    "java-version": "7",
+    "tomcat-major-version": "7",
+    "tomcat-version": "7.0.68"
+  }
+}

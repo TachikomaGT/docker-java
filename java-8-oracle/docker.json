@@ -1,0 +1,6 @@
+{
+  "template": "java-oracle",
+  "settings": {
+    "java-version": "8"
+  }
+}
