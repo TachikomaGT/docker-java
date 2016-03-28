@@ -2,7 +2,6 @@
   "template": "tomcat",
   "settings": {
     "java-version": "8",
-    "tomcat-major-version": "8",
-    "tomcat-version": "8.0.32"
+    "tomcat-url": "https://www.apache.org/dist/tomcat/tomcat-8/v8.0.33/bin/apache-tomcat-8.0.33.tar.gz"
   }
 }

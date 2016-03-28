@@ -2,7 +2,6 @@
   "template": "tomcat",
   "settings": {
     "java-version": "7",
-    "tomcat-major-version": "7",
-    "tomcat-version": "7.0.68"
+    "tomcat-url": "https://www.apache.org/dist/tomcat/tomcat-7/v7.0.68/bin/apache-tomcat-7.0.68.tar.gz"
   }
 }

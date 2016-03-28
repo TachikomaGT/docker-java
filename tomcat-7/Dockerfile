@@ -25,17 +25,14 @@ RUN set -ex \
 		gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
 	done
 
-ENV TOMCAT_MAJOR 7
-ENV TOMCAT_VERSION 7.0.68
-ENV TOMCAT_TGZ_URL https://www.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz
-
 RUN set -x \
-	&& curl -fSL "$TOMCAT_TGZ_URL" -o tomcat.tar.gz \
-	&& curl -fSL "$TOMCAT_TGZ_URL.asc" -o tomcat.tar.gz.asc \
+	&& curl -fSL "https://www.apache.org/dist/tomcat/tomcat-7/v7.0.68/bin/apache-tomcat-7.0.68.tar.gz" -o tomcat.tar.gz \
+    && curl -fSL "https://www.apache.org/dist/tomcat/tomcat-7/v7.0.68/bin/apache-tomcat-7.0.68.tar.gz.asc" -o tomcat.tar.gz.asc \
 	&& gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz \
 	&& tar -xvf tomcat.tar.gz --strip-components=1 \
 	&& rm bin/*.bat \
-	&& rm tomcat.tar.gz*
+	&& rm tomcat.tar.gz* \
+    && rm -rf $CATALINA_HOME/webapps/*
 
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
